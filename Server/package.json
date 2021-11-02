@@ -1,0 +1,19 @@
+{
+  "name": "employee",
+  "version": "1.0.0",
+  "description": "adding, fetching and deleting employee details",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZubairShk/employee_record.git"
+  },
+  "author": "zubair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZubairShk/employee_record/issues"
+  },
+  "homepage": "https://github.com/ZubairShk/employee_record#readme"
+}
