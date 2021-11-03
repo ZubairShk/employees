@@ -231,7 +231,7 @@ function FormPage() {
                     paddingY={3}
                   >
                     <Box textAlign="center">
-                      <Typography variant="h5" color="primary">
+                      <Typography variant="h5" className={classes.title}>
                         Add New Employee
                       </Typography>
                     </Box>

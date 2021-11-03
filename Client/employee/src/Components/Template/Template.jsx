@@ -1,6 +1,9 @@
 import React from "react";
 import { Box } from "@material-ui/core";
 import NewBackround from "../organism/NewBackround.jpg";
+import HalfBack from "../organism/HalfBack.jpg";
+import WebBack from "../organism/WebBack.png";
+
 import { makeStyles } from "@material-ui/core/styles";
 
 function Template({ children }) {
@@ -11,7 +14,7 @@ function Template({ children }) {
       style={{
         minWidth: "100wh",
         minHeight: "100vh",
-        backgroundImage: `url(${NewBackround})`,
+        backgroundImage: `url(${HalfBack})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
