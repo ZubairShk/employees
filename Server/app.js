@@ -6,6 +6,12 @@ require("dotenv").config();
 const port = process.env.PORT;
 const routes = require("./routes/routes");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "http://localhost:5000",
+  })
+);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

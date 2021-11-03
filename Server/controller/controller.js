@@ -2,9 +2,15 @@ const model = require("../models");
 
 exports.getEmployeeDetails = async (req, res) => {
   try {
-    const data = await model.Employees.findAll({
-      attributes: ["id", "Name", "email", "age", "dob", "address", "photo"],
-    });
+    const { id } = req.params;
+    let data = null;
+    if (id) {
+      data = await model.Employees.findByPk(id);
+    } else {
+      data = await model.Employees.findAll({
+        attributes: ["id", "Name", "email", "age", "dob", "address", "photo"],
+      });
+    }
     if (!data) {
       return res
         .status(205)
@@ -15,6 +21,25 @@ exports.getEmployeeDetails = async (req, res) => {
     return res.status(205).json({ success: false, data: [], error: error });
   }
 };
+
+// exports.getEmployee = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const data = await models.teams.findByPk(id);
+//     const player = await models.players.findAll({
+//       where: { teamId: team_id },
+//       attributes: ["id", "playerName"],
+//     });
+//     if (!data) {
+//       return res
+//         .status(205)
+//         .json({ success: false, data: [], error: "data not found" });
+//     }
+//     return res.status(200).json({ success: true, data: data });
+//   } catch (error) {
+//     return res.status(205).json({ success: false, data: [], error: error });
+//   }
+// };
 
 exports.addNewEmployee = async (req, res) => {
   try {
